@@ -1,0 +1,572 @@
+/* Nerfies base styles (https://github.com/nerfies/nerfies.github.io, CC BY-SA 4.0),
+   trimmed to what this page uses, plus StateCraft additions below. */
+
+:root {
+  --sc-accent: #13896b;        /* StateCraft green (paper Fig. 1, "consistent") */
+  --sc-accent-soft: #e7f5f0;
+  --sc-warn: #d64545;          /* baseline red (paper Fig. 1, "not consistent") */
+  --sc-ink: #363636;
+  --sc-muted: #6b6b6b;
+  --sc-panel: #f5f5f5;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.statecraft {
+  font-variant: small-caps;
+  font-weight: 600;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-title,
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   StateCraft additions
+   ------------------------------------------------------------------------- */
+
+.title.is-3 {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.section-lede {
+  color: var(--sc-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+video,
+.media-slot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.media-slot {
+  margin: 0 0 1rem;
+}
+
+.media-slot figcaption,
+.figure-caption {
+  color: var(--sc-muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.rounded-media video,
+.rounded-media img {
+  border-radius: 10px;
+}
+
+/* What a graph edge means, stated loudly next to every graph (readers expect a folder tree). */
+.edge-note {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--sc-accent);
+  border-radius: 6px;
+  background: var(--sc-accent-soft);
+  color: var(--sc-ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.edge-note-icon {
+  flex: none;
+  color: var(--sc-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Pending link buttons: rendered but inert until the resource is public. */
+.link-block a.is-pending {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.link-block a.is-pending::after {
+  content: "soon";
+  font-size: 0.65rem;
+  margin-left: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Key-result tiles */
+.stat-tiles {
+  margin-top: 0.5rem;
+}
+
+.stat-tile {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  height: 100%;
+  padding: 1.1rem 1rem;
+  text-align: center;
+}
+
+.stat-tile .stat-value {
+  color: var(--sc-accent);
+  font-family: 'Google Sans', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.stat-tile .stat-label {
+  color: var(--sc-ink);
+  font-size: 0.92rem;
+  margin-top: 0.4rem;
+}
+
+.stat-tile .stat-note {
+  color: var(--sc-muted);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+/* Method steps */
+.method-step {
+  border-left: 4px solid var(--sc-accent);
+  padding: 0.25rem 0 0.25rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.method-step h4 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+/* Results tables */
+.results-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 0.5rem;
+}
+
+.results-table {
+  font-size: 0.95rem;
+  margin: 0 auto;
+  min-width: 520px;
+}
+
+.results-table th,
+.results-table td {
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap;
+}
+
+.results-table th:first-child,
+.results-table td:first-child {
+  text-align: left !important;
+}
+
+.results-table tr.is-ours td {
+  background: var(--sc-accent-soft);
+}
+
+.results-table tr.is-group td {
+  background: #fafafa;
+  color: var(--sc-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.results-table tr.is-upper td {
+  color: var(--sc-muted);
+}
+
+.results-table .best {
+  font-weight: 700;
+}
+
+/* Scrubbable rollout (Nerfies "interpolation" panel, repurposed) */
+.scrub-panel {
+  background: var(--sc-panel);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.scrub-panel .scrub-frame img {
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+}
+
+.scrub-panel .slider {
+  margin: 0.5rem 0 0 !important;
+}
+
+.scrub-label {
+  color: var(--sc-muted);
+  font-family: 'Google Sans', sans-serif;
+  text-align: center;
+}
+
+/* Controllability tabs */
+.edit-panel {
+  display: none;
+}
+
+.edit-panel.is-active {
+  display: block;
+}
+
+.follow-rate {
+  color: var(--sc-accent);
+  font-weight: 700;
+}
+
+/* BibTeX */
+.bibtex-wrap {
+  position: relative;
+}
+
+.bibtex-wrap .copy-btn {
+  position: absolute;
+  right: 0.6rem;
+  top: 0.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .stat-tile .stat-value {
+    font-size: 1.7rem;
+  }
+}
+
+.footer .icon-link.is-pending {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Pipeline player (static/js/player.js): a recorded run, animated step by step. */
+.pipeline-player {
+  margin: 1.5rem auto 0;
+  max-width: 1100px;
+}
+
+.pipeline-player.pp-missing {
+  background: var(--sc-panel);
+  border: 1px dashed #c8c8c8;
+  border-radius: 8px;
+  color: var(--sc-muted);
+  padding: 2rem;
+  text-align: center;
+}
+
+.pp-stage {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+}
+
+.pp-screen {
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.pp-frame {
+  display: block;
+  height: 100%;
+  inset: 0;
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+}
+
+.pp-frame-next {
+  opacity: 0;
+  transition: opacity var(--pp-fade, 0.52s) ease;
+}
+
+.pp-frame-next.is-shown {
+  opacity: 1;
+}
+
+.pp-cursor {
+  height: 26px;
+  margin: -3px 0 0 -4px;
+  pointer-events: none;
+  position: absolute;
+  width: 26px;
+  z-index: 3;
+}
+
+.pp-cursor svg {
+  fill: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+  stroke: #111;
+  stroke-linejoin: round;
+  stroke-width: 1.3;
+}
+
+.pp-ripple {
+  border: 3px solid var(--sc-accent);
+  border-radius: 50%;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 34px;
+  z-index: 2;
+}
+
+.pp-ripple.is-on {
+  animation: pp-ripple var(--pp-click, 0.64s) ease-out;
+}
+
+@keyframes pp-ripple {
+  from { opacity: 0.9; transform: scale(0.3); }
+  to { opacity: 0; transform: scale(1.4); }
+}
+
+.pp-badge {
+  background: rgba(19, 137, 107, 0.92);
+  border-radius: 4px;
+  bottom: 0.6rem;
+  color: #fff;
+  font-size: 0.8rem;
+  left: 0.6rem;
+  padding: 0.15rem 0.5rem;
+  position: absolute;
+  z-index: 4;
+}
+
+.pp-badge:empty {
+  display: none;
+}
+
+.pp-side {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.pp-label {
+  color: var(--sc-muted);
+  display: block;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pp-action-text {
+  color: var(--sc-ink);
+  font-weight: 600;
+}
+
+.pp-gate-line.is-skip {
+  color: var(--sc-accent);
+  font-weight: 600;
+}
+
+.pp-gate-line.is-call {
+  color: var(--sc-ink);
+}
+
+.pp-gate-line.is-missed {
+  color: var(--sc-warn);
+  font-weight: 600;
+}
+
+.pp-raw-toggle {
+  background: none;
+  border: 1px solid #cfcfcf;
+  border-radius: 3px;
+  color: var(--sc-muted);
+  cursor: pointer;
+  float: right;
+  font-size: 0.7rem;
+  padding: 0 0.35rem;
+  text-transform: none;
+}
+
+.pp-raw-toggle.is-active {
+  background: var(--sc-ink);
+  border-color: var(--sc-ink);
+  color: #fff;
+}
+
+.pp-llm-box {
+  background: #1f2328;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-size: 0.78rem;
+  height: 13.5rem;
+  line-height: 1.45;
+  margin: 0.25rem 0 0;
+  overflow: auto;
+  padding: 0.6rem 0.75rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.pp-note {
+  color: var(--sc-muted);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.pp-render-line {
+  color: var(--sc-ink);
+  min-height: 1.4em;
+}
+
+.pp-choices {
+  align-items: center;
+  background: var(--sc-accent-soft);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  padding: 0.7rem 0.9rem;
+}
+
+.pp-choices[hidden],
+.pp-gate[hidden] {
+  display: none;
+}
+
+.pp-choices-prompt {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 600;
+  margin-right: 0.3rem;
+  width: 100%;
+}
+
+.pp-choice {
+  background: #fff;
+  border: 1px solid #b9ddd1;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.7rem;
+  text-align: left;
+}
+
+.pp-choice:hover,
+.pp-choice:focus-visible {
+  border-color: var(--sc-accent);
+  outline: none;
+}
+
+.pp-choice.is-recorded {
+  border-style: dashed;
+}
+
+.pp-choice-note {
+  color: var(--sc-muted);
+  font-size: 0.75rem;
+}
+
+.pp-controls {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.pp-progress {
+  color: var(--sc-muted);
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .pp-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-llm-box {
+    height: 9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-frame-next,
+  .pp-ripple.is-on {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Memory chart: its own row under the revisit video, wide enough to read. */
+.memory-chart {
+  margin: 1.5rem auto 0;
+  max-width: 760px;
+}
