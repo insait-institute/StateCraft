@@ -272,7 +272,8 @@
         if (!alive()) return false;
         self.imgA.src = img.src;
         self.imgB.classList.remove('is-shown');
-        self.renderLine.textContent = 'frame ' + step.frame + (step.note ? ' · ' + step.note : '');
+        var k = step.frame - self.data.steps[0].frame;     // relative: step t, step t+1, ...
+        self.renderLine.textContent = (k ? 'step t+' + k : 'step t') + (step.note ? ' · ' + step.note : '');
         self.badge.textContent = step.badge || '';
         self.badge.hidden = !step.badge;
         self.busy = false;

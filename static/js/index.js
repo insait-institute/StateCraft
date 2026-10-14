@@ -1,7 +1,8 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
 // Scrubbable rollout: frames live at <base>/<000000>.<ext>, one per rollout step.
-// Configure with data-base / data-frames / data-ext on #scrub-panel; data-first = step of frame 0.
+// Configure with data-base / data-frames / data-ext on #scrub-panel. Steps are labelled relative to
+// frame 0 (step t, step t+1, ...), not by their absolute index in the trajectory.
 function initScrub() {
   var panel = document.getElementById('scrub-panel');
   if (!panel) return;
@@ -11,7 +12,6 @@ function initScrub() {
   var base = panel.dataset.base;
   var ext = panel.dataset.ext || 'jpg';
   var count = Number(panel.dataset.frames);
-  var firstStep = Number(panel.dataset.first || 0);
   var frames = [];
 
   function framePath(i) {
@@ -21,7 +21,7 @@ function initScrub() {
   function show(i) {
     var img = slot.querySelector('img');
     img.src = frames[i] ? frames[i].src : framePath(i);
-    label.textContent = 'Step ' + (firstStep + i) + ' / ' + (firstStep + count - 1);
+    label.textContent = i === 0 ? 'step t' : 'step t+' + i;
   }
 
   function start() {
