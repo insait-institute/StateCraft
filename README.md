@@ -1,6 +1,9 @@
 # StateCraft: Augmenting Video World Models with Abstract-State Reasoning
 
-Source of the StateCraft project page, live at <https://insait-institute.github.io/StateCraft/>. Static HTML in the
+Source of the StateCraft project page, live at <https://insait-institute.github.io/StateCraft/>.
+Paper: <https://arxiv.org/abs/2610.19795>.
+
+Static HTML in the
 [Nerfies](https://github.com/nerfies/nerfies.github.io) style (Bulma, no build step); every asset is
 self-hosted, with no analytics and no third-party requests.
 
